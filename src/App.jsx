@@ -1,7 +1,6 @@
 import { useState } from "react";
 import logo from "./assets/logo.jpeg";
 
-
 const trackLead = () => {
   if (window.fbq) {
     window.fbq("track", "Lead");
@@ -11,6 +10,8 @@ const trackLead = () => {
 
 export default function App() {
   const [openFaq, setOpenFaq] = useState(null);
+    const [showForm, setShowForm] = useState(false);
+
 
   return (
     <div className="min-h-screen bg-slate-50 text-slate-800 overflow-x-hidden">
@@ -125,8 +126,8 @@ export default function App() {
 
   </div>
 </section>
-    
-      {/* ================= FORM ================= */}
+
+{/* ================= FORM ================= */}
 <section
   id="lead-form"
   className="relative py-28 px-6 bg-slate-50 scroll-mt-32 overflow-hidden"
@@ -150,49 +151,93 @@ export default function App() {
       </h2>
 
       <p className="text-lg text-slate-600 mb-8 max-w-lg">
-        Complete the form and our team will reach out to understand your goals
-        and guide you through suitable, ethical income opportunities.
+        Fill out a short form and our team will personally contact you
+        to guide you with suitable, ethical income opportunities.
       </p>
 
-      {/* Trust Points */}
       <div className="space-y-4 text-slate-600">
-        <div className="flex items-center gap-3">
-          <span className="w-9 h-9 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center font-bold">
-            ✓
-          </span>
-          <span>No pressure or hidden commitments</span>
-        </div>
-
-        <div className="flex items-center gap-3">
-          <span className="w-9 h-9 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center font-bold">
-            ✓
-          </span>
-          <span>One-to-one guidance from experienced mentors</span>
-        </div>
-
-        <div className="flex items-center gap-3">
-          <span className="w-9 h-9 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center font-bold">
-            ✓
-          </span>
-          <span>Your information remains secure and confidential</span>
-        </div>
+        {[
+          
+        ].map((t, i) => (
+          <div key={i} className="flex items-center gap-3">
+            <span className="w-9 h-9 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center font-bold">
+              ✓
+            </span>
+            <span>{t}</span>
+          </div>
+        ))}
       </div>
     </div>
 
-    {/* FORM CONTAINER */}
+    {/* FORM PREVIEW (REAL FORM, LOCKED) */}
     <div className="relative">
-      <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-indigo-400/30 to-cyan-400/30 blur-xl"></div>
+      <div className="relative rounded-2xl border border-slate-200 bg-white shadow-xl overflow-hidden">
 
-      <div className="relative rounded-2xl border border-slate-200/60 bg-white/90 backdrop-blur-md shadow-2xl overflow-hidden">
-        <iframe
-          src="https://docs.google.com/forms/d/e/1FAIpQLSedPlnL6oD0Tdc1G05N-QOYETWXAZcl1hRUyW84F4z8lIK9IA/viewform?embedded=true"
-          className="w-full h-[540px] border-0"
-          title="Business Junction Lead Form"
-        />
+        {/* Real form preview (blurred & locked) */}
+        <div className="pointer-events-none blur-[2px] opacity-70">
+          <iframe
+            src="https://docs.google.com/forms/d/e/1FAIpQLSedPlnL6oD0Tdc1G05N-QOYETWXAZcl1hRUyW84F4z8lIK9IA/viewform?embedded=true"
+            className="w-full h-[520px] border-0"
+            title="Business Junction Lead Form Preview"
+          />
+        </div>
+
+        {/* Overlay CTA */}
+        <button
+          onClick={() => {
+            trackLead();       // pixel fires here
+            setShowForm(true);
+          }}
+          className="
+            absolute inset-0 z-10 flex flex-col items-center justify-center
+            bg-white/60 backdrop-blur-sm
+            text-center transition hover:bg-white/70
+            focus:outline-none
+          "
+          aria-label="Open lead form"
+        >
+          <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-indigo-600 text-white text-2xl font-bold">
+            →
+          </div>
+          <p className="text-xl font-semibold text-slate-900 mb-1">
+            Click to Fill the Form
+          </p>
+          <p className="text-sm text-slate-600">
+            Takes less than 1 minute
+          </p>
+        </button>
       </div>
     </div>
-
   </div>
+
+  {/* MODAL WITH INTERACTIVE FORM */}
+  {showForm && (
+    <div className="fixed inset-0 z-[999] flex items-center justify-center bg-black/50 backdrop-blur-sm px-4">
+      <div className="relative w-full max-w-2xl rounded-2xl bg-white shadow-2xl overflow-hidden">
+
+        <div className="flex items-center justify-between px-6 py-4 border-b">
+          <h3 className="text-lg font-semibold text-slate-900">
+            Submit Your Details
+          </h3>
+          <button
+            onClick={() => setShowForm(false)}
+            className="text-slate-500 hover:text-slate-900 text-xl"
+            aria-label="Close form"
+          >
+            ✕
+          </button>
+        </div>
+
+        <div className="h-[75vh] overflow-y-auto">
+          <iframe
+            src="https://docs.google.com/forms/d/e/1FAIpQLSedPlnL6oD0Tdc1G05N-QOYETWXAZcl1hRUyW84F4z8lIK9IA/viewform?embedded=true"
+            className="w-full h-full border-0"
+            title="Business Junction Lead Form"
+          />
+        </div>
+      </div>
+    </div>
+  )}
 </section>
       {/* ================= STATS ================= */}
 <section className="relative py-24 px-6 bg-white overflow-hidden">
@@ -395,42 +440,32 @@ export default function App() {
 </section>
 
      {/* ================= TESTIMONIALS ================= */}
-      <section
-  id="testimonials"
-  className="relative py-28 px-6 bg-white scroll-mt-32 overflow-hidden"
->
-  {/* Decorative accent */}
-  <div className="absolute -top-24 right-1/4 w-[420px] h-[420px] bg-indigo-200/40 rounded-full blur-3xl"></div>
+{/* Testimonials Grid */}
+<div className="grid gap-8 md:grid-cols-2 text-left">
+  <Testimonial
+    name="Sai Kumar"
+    role="Part-Time Professional"
+    quote="I was earning 50 thousand every month by working part-time. Before Business Junction, my income was only sufficient for EMIs, house rent, and my children's fees. After joining Business Junction, I gained a second source of income, bought my dream car, and achieved financial freedom. It is a genuine and very good company."
+  />
 
-  <div className="relative max-w-6xl mx-auto text-center">
+  <Testimonial
+    name="Prasad"
+    role="Aspiring Entrepreneur"
+    quote="I was earning 55 thousand every month by working part-time. Before joining Business Junction, I had zero knowledge about business. They provided complete training from scratch to a professional level. Now I can confidently do any kind of business, whether service-based or product-based."
+  />
 
-    {/* Section Heading */}
-    <div className="mb-20">
-      <p className="text-sm font-semibold tracking-wide text-indigo-600 uppercase mb-3">
-        Testimonials
-      </p>
-      <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900">
-        Real People.{" "}
-        <span className="bg-gradient-to-r from-indigo-700 to-violet-700 bg-clip-text text-transparent">
-          Real Results
-        </span>
-      </h2>
-      <p className="mt-4 text-slate-600 max-w-2xl mx-auto">
-        Hear from individuals who have taken the first step and experienced
-        clarity, confidence, and steady progress.
-      </p>
-    </div>
+  <Testimonial
+    name="Chandrakant"
+    role="Career Seeker"
+    quote="I was earning 60 thousand every month, but I was struggling to find a stable job. When Business Junction gave me this opportunity, it completely changed my life. I strongly suggest everyone join and utilize this opportunity."
+  />
 
-    {/* Testimonials Grid */}
-    <div className="grid gap-8 md:grid-cols-2 text-left">
-      <Testimonial name="Ramesh" role="Retired" />
-      <Testimonial name="Lakshmi" role="Homemaker" />
-      <Testimonial name="Rahul" role="Student" />
-      <Testimonial name="Suresh" role="Job Seeker" />
-    </div>
-
-  </div>
-</section>
+  <Testimonial
+    name="Raj Kumar"
+    role="Working Professional"
+    quote="I was earning 60 thousand every month. Business Junction has given me financial freedom and a strong platform to build a secure future for myself and my children."
+  />
+</div>
 
       {/* ================= FAQ ================= */}
 <section
