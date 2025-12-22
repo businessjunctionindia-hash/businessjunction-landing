@@ -186,7 +186,7 @@ export default function App() {
 
   <div className="relative max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-start">
 
-    {/* LEFT CONTENT */}
+    {/* LEFT CONTENT (UNCHANGED – MINIMAL) */}
     <div>
       <p className="text-sm font-semibold tracking-wide text-indigo-600 uppercase mb-3">
         Get Started
@@ -195,35 +195,33 @@ export default function App() {
       <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-5 leading-tight">
         Submit Your Details for{" "}
         <span className="bg-gradient-to-r from-indigo-700 to-violet-700 bg-clip-text text-transparent">
-          By clicking the below button
+          the Next Step
         </span>
       </h2>
 
       <p className="text-lg text-slate-600 mb-8 max-w-lg">
-        Fill out a short form and our team will personally contact you
-        to guide you with suitable, ethical income opportunities.
+        Fill out a short form and our team will personally contact you.
       </p>
-
-      <div className="space-y-4 text-slate-600">
-        {[
-          
-        ].map((t, i) => (
-          <div key={i} className="flex items-center gap-3">
-            <span className="w-9 h-9 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center font-bold">
-              ✓
-            </span>
-            <span>{t}</span>
-          </div>
-        ))}
-      </div>
     </div>
 
-    {/* FORM PREVIEW (REAL FORM, LOCKED) */}
+    {/* FORM PREVIEW (ENHANCED VISUAL FOCUS) */}
     <div className="relative">
-      <div className="relative rounded-2xl border border-slate-200 bg-white shadow-xl overflow-hidden">
 
-        {/* Real form preview (blurred & locked) */}
-        <div className="pointer-events-none blur-[2px] opacity-70">
+      {/* Card with lift + glow */}
+      <div
+        className="
+          relative rounded-2xl border border-slate-200
+          bg-white shadow-xl overflow-hidden
+          transition-all duration-500
+          hover:-translate-y-2
+          hover:shadow-[0_30px_80px_rgba(99,102,241,0.25)]
+        "
+      >
+        {/* subtle edge glow */}
+        <div className="absolute inset-0 rounded-2xl border border-indigo-400/20 pointer-events-none"></div>
+
+        {/* Form preview (no blur – looks accessible) */}
+        <div className="pointer-events-none opacity-60">
           <iframe
             src="https://docs.google.com/forms/d/e/1FAIpQLSedPlnL6oD0Tdc1G05N-QOYETWXAZcl1hRUyW84F4z8lIK9IA/viewform?embedded=true"
             className="w-full h-[520px] border-0"
@@ -231,25 +229,31 @@ export default function App() {
           />
         </div>
 
-        {/* Overlay CTA */}
+        {/* Overlay CTA (PULSE + LIVE EFFECT) */}
         <button
           onClick={() => {
-            trackLead();       // pixel fires here
+            trackLead();
             setShowForm(true);
           }}
           className="
             absolute inset-0 z-10 flex flex-col items-center justify-center
             bg-white/60 backdrop-blur-sm
-            text-center transition hover:bg-white/70
+            text-center
+            animate-pulse hover:animate-none
+            transition
             focus:outline-none
           "
           aria-label="Open lead form"
         >
-          <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-indigo-600 text-white text-2xl font-bold">
+          {/* Icon with live indicator */}
+          <div className="relative mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-indigo-600 text-white text-2xl font-bold">
             →
+            <span className="absolute -top-1 -right-1 w-3 h-3 bg-emerald-400 rounded-full animate-ping"></span>
+            <span className="absolute -top-1 -right-1 w-3 h-3 bg-emerald-400 rounded-full"></span>
           </div>
+
           <p className="text-xl font-semibold text-slate-900 mb-1">
-            Click here to sumbit your details
+           Click here to sumbit your details
           </p>
           <p className="text-sm text-slate-600">
             Takes less than 1 minute
@@ -259,7 +263,7 @@ export default function App() {
     </div>
   </div>
 
-  {/* MODAL WITH INTERACTIVE FORM */}
+  {/* MODAL WITH INTERACTIVE FORM (UNCHANGED) */}
   {showForm && (
     <div className="fixed inset-0 z-[999] flex items-center justify-center bg-black/50 backdrop-blur-sm px-4">
       <div className="relative w-full max-w-2xl rounded-2xl bg-white shadow-2xl overflow-hidden">
@@ -288,6 +292,7 @@ export default function App() {
     </div>
   )}
 </section>
+
       {/* ================= STATS ================= */}
 <section className="relative py-24 px-6 bg-white overflow-hidden">
   
