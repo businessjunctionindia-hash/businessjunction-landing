@@ -127,6 +127,55 @@ export default function App() {
   </div>
 </section>
 
+     {/* ================= TESTIMONIALS ================= */}
+
+{/* Reviews Section */}
+<section className="relative py-24 px-6 bg-gradient-to-b from-white to-slate-50">
+  <div className="max-w-6xl mx-auto">
+
+    {/* Section Header */}
+    <div className="text-center mb-16">
+      <p className="text-sm font-semibold tracking-wide text-indigo-600 uppercase mb-3">
+        Reviews
+      </p>
+      <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900">
+        Trusted by{" "}
+        <span className="bg-gradient-to-r from-indigo-700 to-violet-700 bg-clip-text text-transparent">
+          Real People
+        </span>
+      </h2>
+      <p className="mt-4 text-slate-600 max-w-2xl mx-auto">
+        Hear genuine experiences from individuals who transformed their income,
+        confidence, and future with Business Junction.
+      </p>
+    </div>
+
+    {/* Reviews Grid */}
+    <div className="grid gap-8 md:grid-cols-2">
+      <Testimonial
+        name="Sai Kumar"
+        role="Part-Time Professional"
+        quote="I was earning 50 thousand every month by working part-time. Before Business Junction, all my salary was sufficient for Emi's, house rent, and children's fees only.  After joining Business Junction, I got a second source of income, I bought my dream car, and I got financial freedom.it was a genuine and very good company." />
+
+      <Testimonial
+        name="Prasad"
+        role="Aspiring Entrepreneur"
+        quote="I was earning 55 thousand every month by working part-time.Before joining Business Junction I don't have any knowledge in business (zero knowledge), but Business Junction provided all the training from scratch to the pro level. now I can do any kind of business, whether it is service-based or product-based."   />
+
+      <Testimonial
+        name="Chandrakant"
+        role="Career Seeker"
+        quote="I was earning 60 thousand every month, but I was struggling to find a stable job. When Business Junction gave me this opportunity, it completely changed my life. I strongly suggest everyone join and utilize this opportunity."
+      />
+
+      <Testimonial
+        name="Raj Kumar"
+        role="Working Professional"
+        quote="I was earning 60 thousand every month. Business Junction has given me financial freedom and a platform to build a future for my children and myself."    />
+    </div>
+  </div>
+</section>
+
 {/* ================= FORM ================= */}
 <section
   id="lead-form"
@@ -146,7 +195,7 @@ export default function App() {
       <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-5 leading-tight">
         Submit Your Details for{" "}
         <span className="bg-gradient-to-r from-indigo-700 to-violet-700 bg-clip-text text-transparent">
-          Personal Guidance
+          By clicking the below button
         </span>
       </h2>
 
@@ -200,7 +249,7 @@ export default function App() {
             →
           </div>
           <p className="text-xl font-semibold text-slate-900 mb-1">
-            Click to Fill the Form
+            Click here to sumbit your details
           </p>
           <p className="text-sm text-slate-600">
             Takes less than 1 minute
@@ -439,33 +488,6 @@ export default function App() {
   </div>
 </section>
 
-     {/* ================= TESTIMONIALS ================= */}
-{/* Testimonials Grid */}
-<div className="grid gap-8 md:grid-cols-2 text-left">
-  <Testimonial
-    name="Sai Kumar"
-    role="Part-Time Professional"
-    quote="I was earning 50 thousand every month by working part-time. Before Business Junction, my income was only sufficient for EMIs, house rent, and my children's fees. After joining Business Junction, I gained a second source of income, bought my dream car, and achieved financial freedom. It is a genuine and very good company."
-  />
-
-  <Testimonial
-    name="Prasad"
-    role="Aspiring Entrepreneur"
-    quote="I was earning 55 thousand every month by working part-time. Before joining Business Junction, I had zero knowledge about business. They provided complete training from scratch to a professional level. Now I can confidently do any kind of business, whether service-based or product-based."
-  />
-
-  <Testimonial
-    name="Chandrakant"
-    role="Career Seeker"
-    quote="I was earning 60 thousand every month, but I was struggling to find a stable job. When Business Junction gave me this opportunity, it completely changed my life. I strongly suggest everyone join and utilize this opportunity."
-  />
-
-  <Testimonial
-    name="Raj Kumar"
-    role="Working Professional"
-    quote="I was earning 60 thousand every month. Business Junction has given me financial freedom and a strong platform to build a secure future for myself and my children."
-  />
-</div>
 
       {/* ================= FAQ ================= */}
 <section
@@ -539,6 +561,95 @@ export default function App() {
   </div>
 </section>
 
+{/* ================= CONTACT INFO ================= */}
+<section className="relative py-16 px-6 bg-gradient-to-b from-slate-50 to-white">
+  <div className="max-w-5xl mx-auto">
+
+    <div className="text-center mb-12">
+      <p className="text-sm font-semibold tracking-wide text-indigo-600 uppercase mb-3">
+        Contact Us
+      </p>
+      <h3 className="text-3xl md:text-4xl font-extrabold text-slate-900">
+        We’re Here to Help
+      </h3>
+      <p className="mt-4 text-slate-600 max-w-xl mx-auto">
+        Have questions or need guidance? Reach out to us directly — our team is happy to assist you.
+      </p>
+    </div>
+
+    {/* Contact Cards */}
+    <div className="grid sm:grid-cols-2 gap-8">
+
+      {/* Phone */}
+      <a
+        href="tel:9347927074"
+        className="group flex items-center gap-6 p-8 rounded-2xl bg-white border border-slate-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition"
+      >
+        <div className="w-14 h-14 rounded-full bg-indigo-600 text-white flex items-center justify-center text-2xl font-bold">
+          ☎
+        </div>
+
+        <div>
+          <p className="text-sm text-slate-500 font-medium">Phone Number</p>
+          <p className="text-xl font-bold text-slate-900 group-hover:text-indigo-600 transition">
+            93479 27074
+          </p>
+        </div>
+      </a>
+
+      {/* Email */}
+      <a
+        href="mailto:businessjunctionindia@gmail.com"
+        className="group flex items-center gap-6 p-8 rounded-2xl bg-white border border-slate-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition"
+      >
+        <div className="w-14 h-14 rounded-full bg-violet-600 text-white flex items-center justify-center text-2xl font-bold">
+          ✉
+        </div>
+
+        <div>
+          <p className="text-sm text-slate-500 font-medium">Email Address</p>
+          <p className="text-xl font-bold text-slate-900 group-hover:text-violet-600 transition break-all">
+            businessjunctionindia@gmail.com
+          </p>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+{/* ================= FLOATING WHATSAPP ================= */}
+{/* ================= FLOATING WHATSAPP ================= */}
+<a
+  href="https://wa.me/919347927074?text=Hello%20Business%20Junction%2C%20I%20am%20interested%20in%20your%20opportunity."
+  target="_blank"
+  rel="noopener noreferrer"
+  className="
+    fixed bottom-6 right-6 z-[9999]
+    flex items-center gap-3
+    px-5 py-3 rounded-full
+    bg-[#25D366]
+    text-white font-semibold
+    shadow-xl
+    hover:scale-105 hover:shadow-2xl
+    transition-all duration-300
+  "
+  aria-label="Chat on WhatsApp"
+>
+  {/* WhatsApp Icon */}
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 32 32"
+    className="w-6 h-6 fill-white"
+  >
+    <path d="M19.11 17.93c-.27-.14-1.61-.79-1.86-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.14-1.14-.42-2.17-1.34-.8-.71-1.34-1.59-1.5-1.86-.16-.27-.02-.42.12-.55.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.48-.84-2.02-.22-.54-.45-.47-.61-.48-.16-.01-.34-.01-.52-.01-.18 0-.48.07-.73.34-.25.27-.96.93-.96 2.27 0 1.34.98 2.63 1.11 2.81.14.18 1.93 2.95 4.68 4.14.65.28 1.16.45 1.56.58.66.21 1.26.18 1.73.11.53-.08 1.61-.66 1.84-1.3.23-.64.23-1.18.16-1.3-.07-.11-.25-.18-.52-.32zM16.03 3C9.4 3 4 8.37 4 15c0 2.63.86 5.06 2.31 7.03L4 29l7.14-2.25C13.03 27.55 14.49 28 16.03 28c6.63 0 12.03-5.37 12.03-12S22.66 3 16.03 3z" />
+  </svg>
+
+  <span className="text-sm sm:text-base">
+    Chat on WhatsApp
+  </span>
+</a>
+
       {/* ================= FOOTER ================= */}
       <footer className="bg-slate-900 text-slate-300 py-14 px-6 text-center">
   <p className="text-xl font-extrabold mb-2">
@@ -564,19 +675,20 @@ export default function App() {
   </p>
 </footer>
 
+
+
+
     </div>
   );
 }
 
 /* ================= COMPONENT ================= */
-
-function Testimonial({ name, role }) {
+function Testimonial({ name, role, quote }) {
   return (
     <div className="group bg-white p-8 rounded-2xl border border-slate-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition">
 
       <p className="text-slate-600 leading-relaxed mb-6">
-        “Business Junction provided clear guidance, ethical practices, and the
-        confidence to move forward with a structured income path.”
+        “{quote}”
       </p>
 
       <div className="flex items-center gap-4">
