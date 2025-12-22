@@ -619,7 +619,6 @@ export default function App() {
 </section>
 
 {/* ================= FLOATING WHATSAPP ================= */}
-{/* ================= FLOATING WHATSAPP ================= */}
 <a
   href="https://wa.me/919347927074?text=Hello%20Business%20Junction%2C%20I%20am%20interested%20in%20your%20opportunity."
   target="_blank"
@@ -653,8 +652,8 @@ export default function App() {
 {/* ================= FLOATING APPLY BUTTON ================= */}
 <button
   onClick={() => {
-    trackLead();      // 🔥 Pixel fires here
-    setShowForm(true); // 🔓 Opens your existing form modal
+    trackLead();      //  Pixel fires here
+    setShowForm(true); //  Opens your existing form modal
   }}
   className="
     fixed bottom-24 right-6 z-[9999]
