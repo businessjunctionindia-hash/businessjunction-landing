@@ -650,6 +650,34 @@ export default function App() {
   </span>
 </a>
 
+{/* ================= FLOATING APPLY BUTTON ================= */}
+<button
+  onClick={() => {
+    trackLead();      // 🔥 Pixel fires here
+    setShowForm(true); // 🔓 Opens your existing form modal
+  }}
+  className="
+    fixed bottom-24 right-6 z-[9999]
+    flex items-center gap-3
+    px-5 py-3 rounded-full
+    bg-indigo-600
+    text-white font-semibold
+    shadow-xl
+    hover:bg-indigo-700
+    hover:scale-105 hover:shadow-2xl
+    transition-all duration-300
+  "
+  aria-label="Apply Now"
+>
+  {/* Icon */}
+  <span className="text-lg">📝</span>
+
+  <span className="text-sm sm:text-base">
+    Apply Now
+  </span>
+</button>
+
+
       {/* ================= FOOTER ================= */}
       <footer className="bg-slate-900 text-slate-300 py-14 px-6 text-center">
   <p className="text-xl font-extrabold mb-2">
