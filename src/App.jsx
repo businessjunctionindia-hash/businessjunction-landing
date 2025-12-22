@@ -73,11 +73,16 @@ export default function App() {
 <div className="mb-8 md:mb-10 flex justify-center">
   <div
     className="
-      px-6 py-4
-      bg-white/35
-      rounded-[32px]
-      shadow-[0_4px_30px_rgba(255,255,255,0.08)]
-      mx-auto
+      inline-flex
+      items-center
+      justify-center
+      p-1
+      bg-white/100
+      rounded-[16px]
+      shadow-[0_2px_10px_rgba(255,255,255,0.03)]
+      max-w-[180px]      /* 🔥 HARD STOP */
+      sm:max-w-[220px]
+      md:max-w-none
     "
   >
     <img
@@ -85,12 +90,12 @@ export default function App() {
       alt="Business Junction Logo"
       className="
         block
-        mx-auto
+        w-full              /* 🔥 FILL THE SMALL BOX */
         h-auto
-        w-[70%]
-        sm:w-[60%]
-        md:w-[420px]
-        lg:w-[480px]
+        max-w-[180px]       /* 🔥 MOBILE FORCE */
+        sm:max-w-[220px]
+        md:max-w-[360px]
+        lg:max-w-[400px]
         object-contain
       "
     />
