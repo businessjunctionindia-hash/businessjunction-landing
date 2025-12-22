@@ -58,35 +58,62 @@ export default function App() {
 </header>
 
 
-      {/* ================= HERO ================= */}
+{/* ================= HERO ================= */}
 <section className="relative overflow-hidden pt-36 pb-32 px-6 bg-[#0B0D12] text-white">
 
-  {/* mesh background */}
+  {/* ORIGINAL mesh background */}
   <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(99,102,241,0.18),transparent_40%),radial-gradient(circle_at_80%_30%,rgba(139,92,246,0.16),transparent_40%),radial-gradient(circle_at_50%_80%,rgba(34,211,238,0.14),transparent_40%)]"></div>
+
+  {/* SOFT GLOBAL WHITE SUPPORT (ONLY AROUND LOGO ZONE, NOT FULL HERO) */}
+  <div
+    className="
+      absolute
+      top-40
+      left-1/2
+      -translate-x-1/2
+      w-[900px]
+      h-[520px]
+      bg-white/35
+      rounded-full
+      blur-[200px]
+    "
+  ></div>
 
   {/* noise overlay */}
   <div className="absolute inset-0 opacity-[0.12] bg-[url('https://grainy-gradients.vercel.app/noise.svg')]"></div>
 
   <div className="relative max-w-4xl mx-auto text-center">
 
-{/* HERO LOGO */}
-<div className="flex justify-center mb-8 md:mb-10">
-  <img
-    src="/logo.png"
-    alt="Business Junction Logo"
-    className="
-      h-auto
-      w-[65%]          /* MOBILE – unchanged */
-      sm:w-[60%]       /* LARGE MOBILE – unchanged */
-      md:w-[420px]     /* DESKTOP – REDUCED */
-      lg:w-[480px]     /* LARGE DESKTOP – REDUCED */
-      object-contain
-      drop-shadow-xl
-    "
-  />
-</div>
+    {/* ================= HERO LOGO ================= */}
+    <div className="relative mb-8 md:mb-10 flex justify-center">
 
+      {/* STRONG WHITE SHADE — LOGO ONLY */}
+      <div
+        className="
+          absolute
+          inset-0
+          -z-10
+          bg-white/180
+          blur-[180px]
+          rounded-full
+          scale-125
+        "
+      ></div>
 
+      <img
+        src="/logo.png"
+        alt="Business Junction Logo"
+        className="
+          block
+          h-auto
+          w-[65%]
+          sm:w-[60%]
+          md:w-[420px]
+          lg:w-[480px]
+          object-contain
+        "
+      />
+    </div>
 
     {/* badge */}
     <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-white/10 bg-white/5 backdrop-blur mb-10 text-sm font-semibold text-white/80">
