@@ -80,7 +80,7 @@ export default function App() {
       bg-white/100
       rounded-[16px]
       shadow-[0_2px_10px_rgba(255,255,255,0.03)]
-      max-w-[180px]      /* 🔥 HARD STOP */
+      max-w-[180px]      /*  HARD STOP */
       sm:max-w-[220px]
       md:max-w-none
     "
@@ -90,9 +90,9 @@ export default function App() {
       alt="Business Junction Logo"
       className="
         block
-        w-full              /* 🔥 FILL THE SMALL BOX */
+        w-full              /*  FILL THE SMALL BOX */
         h-auto
-        max-w-[180px]       /* 🔥 MOBILE FORCE */
+        max-w-[180px]       /*  MOBILE FORCE */
         sm:max-w-[220px]
         md:max-w-[360px]
         lg:max-w-[400px]
