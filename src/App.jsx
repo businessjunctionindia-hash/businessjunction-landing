@@ -1,11 +1,7 @@
 import { useState } from "react";
 import logo from "./assets/logo.jpeg";
 
-const trackLead = () => {
-  if (window.fbq) {
-    window.fbq("track", "Lead");
-  }
-};
+
 
 
 export default function App() {
@@ -36,7 +32,6 @@ export default function App() {
       {/* Right: CTA */}
       <a
         href="#lead-form"
-        onClick={trackLead}
         className="
           relative inline-flex items-center
           px-4 py-1.5 sm:px-5 sm:py-2
@@ -144,7 +139,6 @@ export default function App() {
     <div className="flex justify-center">
       <a
         href="#lead-form"
-        onClick={trackLead}
         className="group relative inline-flex items-center justify-center px-10 py-5 rounded-2xl font-bold text-lg bg-white text-black transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_20px_60px_rgba(255,255,255,0.25)]"
       >
         Get Started Today
@@ -265,7 +259,6 @@ export default function App() {
         {/* Overlay CTA (PULSE + LIVE EFFECT) */}
         <button
           onClick={() => {
-            trackLead();    //pixel fires here
             setShowForm(true);
           }}
           className="
@@ -690,7 +683,6 @@ export default function App() {
 {/* ================= FLOATING APPLY BUTTON ================= */}
 <button
   onClick={() => {
-    trackLead();      //  Pixel fires here
     setShowForm(true); //  Opens your existing form modal
   }}
   className="
@@ -732,7 +724,7 @@ export default function App() {
   <div className="flex flex-wrap justify-center gap-6 text-sm text-slate-400 mb-6">
     <a href="#about" className="hover:text-white transition">About</a>
     <a href="#faq" className="hover:text-white transition">FAQ</a>
-    <a href="#lead-form"    onClick={trackLead} className="hover:text-white transition">Contact</a>
+    <a href="#lead-form"  className="hover:text-white transition">Contact</a>
   </div>
 
   <p className="text-xs text-slate-500">
