@@ -7,23 +7,127 @@
 
   <!-- Meta Pixel -->
   <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
+    !function(f,b,e,v,n,t,s){
+      if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)
+    }(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
 
     fbq('init', '1180124360359154');
     fbq('track', 'PageView');
     fbq('track', 'Lead');
   </script>
+
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at 20% 20%, #6366f1, transparent 40%),
+                  radial-gradient(circle at 80% 30%, #8b5cf6, transparent 40%),
+                  radial-gradient(circle at 50% 80%, #22d3ee, transparent 40%),
+                  #0b0d12;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.06);
+      backdrop-filter: blur(14px);
+      border-radius: 22px;
+      padding: 48px 36px;
+      max-width: 420px;
+      width: 90%;
+      text-align: center;
+      box-shadow: 0 30px 80px rgba(0,0,0,0.45);
+      border: 1px solid rgba(255,255,255,0.12);
+    }
+
+    .check {
+      width: 72px;
+      height: 72px;
+      margin: 0 auto 20px;
+      border-radius: 50%;
+      background: linear-gradient(135deg,#22c55e,#4ade80);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 38px;
+      font-weight: 700;
+      color: #022c22;
+      box-shadow: 0 10px 30px rgba(34,197,94,0.45);
+    }
+
+    h1 {
+      font-size: 28px;
+      margin: 10px 0 12px;
+      font-weight: 800;
+      letter-spacing: -0.3px;
+    }
+
+    p {
+      color: rgba(255,255,255,0.78);
+      font-size: 16px;
+      line-height: 1.6;
+      margin-bottom: 28px;
+    }
+
+    .note {
+      font-size: 14px;
+      color: rgba(255,255,255,0.55);
+      margin-top: 22px;
+    }
+
+    .whatsapp {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #25D366;
+      color: #002b13;
+      font-weight: 700;
+      padding: 14px 22px;
+      border-radius: 999px;
+      text-decoration: none;
+      box-shadow: 0 14px 40px rgba(37,211,102,0.45);
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+
+    .whatsapp:hover {
+      transform: translateY(-2px) scale(1.03);
+      box-shadow: 0 20px 60px rgba(37,211,102,0.6);
+    }
+
+    .whatsapp span {
+      font-size: 15px;
+    }
+  </style>
 </head>
 
-<body style="font-family: system-ui, sans-serif; text-align:center; padding:60px;">
-  <h1>Thank you for submitting your details.</h1>
-  <p>Our team will contact you shortly.</p>
+<body>
+  <div class="card">
+    <div class="check">✓</div>
+    <h1>Thank You!</h1>
+    <p>
+      Your details have been received successfully.<br>
+      Our Business Junction team will contact you shortly to guide you through the next steps.
+    </p>
+
+    <a
+      href="https://wa.me/919347927074?text=Hello%20Business%20Junction%2C%20I%20have%20submitted%20my%20details%20and%20would%20like%20to%20know%20the%20next%20step."
+      target="_blank"
+      class="whatsapp"
+    >
+      💬 <span>Chat with us on WhatsApp</span>
+    </a>
+
+    <div class="note">
+      Please keep your phone reachable. We usually respond within a few hours.
+    </div>
+  </div>
 </body>
 </html>
