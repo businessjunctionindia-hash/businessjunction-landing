@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import logo from "./assets/logo.jpeg";
 
 
@@ -7,6 +7,20 @@ import logo from "./assets/logo.jpeg";
 export default function App() {
   const [openFaq, setOpenFaq] = useState(null);
     const [showForm, setShowForm] = useState(false);
+
+      useEffect(() => {
+    if (window.fbq) {
+      window.fbq("track", "PageView");
+    }
+  }, []);
+
+  const openLeadForm = () => {
+    if (window.fbq) {
+      window.fbq("track", "Lead");
+    }
+  openLeadForm();
+  };
+
 
 
   return (
@@ -683,7 +697,7 @@ export default function App() {
 {/* ================= FLOATING APPLY BUTTON ================= */}
 <button
   onClick={() => {
-    setShowForm(true); //  Opens your existing form modal
+      openLeadForm(); //  Opens your existing form modal
   }}
   className="
     fixed bottom-24 right-6 z-[9999]
