@@ -18,7 +18,7 @@ export default function App() {
     if (window.fbq) {
       window.fbq("track", "Lead");
     }
-  openLeadForm();
+   setShowForm(true)
   };
 
 
@@ -697,7 +697,7 @@ export default function App() {
 {/* ================= FLOATING APPLY BUTTON ================= */}
 <button
   onClick={() => {
-      openLeadForm(); //  Opens your existing form modal
+      setShowForm(true) //  Opens your existing form modal
   }}
   className="
     fixed bottom-24 right-6 z-[9999]
